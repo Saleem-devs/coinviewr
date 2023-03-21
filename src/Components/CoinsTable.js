@@ -65,10 +65,11 @@ function CoinsTable() {
   const tHead = ["Coin", "Price", "24h Change", "Market Cap"];
 
   function handleSearch() {
+    const searchUpper = search.toUpperCase();
     return coins.filter(
       (coin) =>
-        coin.name.toLowerCase().includes(search) ||
-        coin.symbol.toLowerCase().includes(search)
+        coin.name.toUpperCase().includes(searchUpper) ||
+        coin.symbol.toUpperCase().includes(searchUpper)
     );
   }
 
@@ -135,11 +136,11 @@ function CoinsTable() {
                             alignItems: "center",
                           }}
                         >
-                          <div className="h-8">
+                          <div className="w-9">
                             <img
                               src={row?.image}
                               alt={row.name}
-                              className="h-full"
+                              className="w-full"
                             />{" "}
                           </div>
 

@@ -16,7 +16,8 @@ import {
   Legend,
 } from "chart.js";
 import { CoinState } from "../CoinContext";
-import { HistoricalChart } from "../config";
+import { HistoricalChart, chartDays } from "../config";
+import SelectBtn from "./SelectBtn";
 
 ChartJs.register(
   CategoryScale,
@@ -59,7 +60,7 @@ function CoinInfo({ coin }) {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <div className="w-full flex flx-col items-center justify-center mt-6 p-4 lg:p-10 lg:w-2/3">
+      <div className="w-full flex flex-col items-center justify-center mt-6 p-4 lg:p-10 lg:w-2/3">
         {!historicalData ? (
           <CircularProgress
             style={{ color: "#98D82C" }}
@@ -96,6 +97,18 @@ function CoinInfo({ coin }) {
                 },
               }}
             />
+
+            <div className="flex justify-around gap-5 w-full mt-5">
+              {chartDays.map((day) => (
+                <SelectBtn
+                  key={day.value}
+                  onClick={() => setDays(day.value)}
+                  selected={day.value === days}
+                >
+                  {day.label}
+                </SelectBtn>
+              ))}
+            </div>
           </>
         )}
       </div>

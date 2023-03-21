@@ -9,3 +9,22 @@ export const HistoricalChart = (id, days = 365, currency) =>
 
 export const TrendingCoins = (currency) =>
   `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=gecko_desc&per_page=10&page=1&sparkline=false&price_change_percentage=24h`;
+
+export const chartDays = [
+  {
+    label: "24 Hours",
+    value: 1,
+  },
+  {
+    label: "30 Days",
+    value: 30,
+  },
+  {
+    label: "3 Months",
+    value: 90,
+  },
+  {
+    label: "1 Year",
+    value: 365,
+  },
+];

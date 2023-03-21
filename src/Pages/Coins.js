@@ -50,7 +50,7 @@ function Coins() {
           <h3 className="font-bold text-4xl tracking-wide mb-5">
             {coin?.name}
           </h3>
-          <p className="pb-4 text-justify self-start lg:pr-6">
+          <p className="pb-4 text-justify self-start md:text-center md:self-center lg:self-start lg:text-left lg:pr-6">
             {ReactHtmlParser(coin?.description.en.split(". ")[0])}.
           </p>
           <div className="self-start md:flex md:flex-col md:items-center md:self-center lg:self-start lg:items-start">

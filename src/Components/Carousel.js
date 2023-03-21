@@ -41,7 +41,7 @@ function Carousel() {
         to={`coins/${coin.id}`}
         className="text-white flex flex-col items-center uppercase gap-3"
       >
-        <img src={coin?.image} alt={coin.image} className="mb-3 h-12" />
+        <img src={coin?.image} alt={coin?.symbol} className="mb-3 h-12" />
         <span>
           {coin?.symbol} &nbsp;
           <span className={profit ? "text-customGreen" : "text-red-600"}>
